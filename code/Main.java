@@ -4,8 +4,8 @@
  * Date: 4/26/2019
  */
 
-import Solutions.*;
 
+import Solutions.*;
 import java.util.*;
 
 /**
@@ -85,7 +85,7 @@ public class Main {
 
   public static void main(String[] args) {
     Main m = new Main();
-    Question quest = new Question();
+    Question quest;
     Scanner scn = new Scanner(System.in);
 
     do {
@@ -94,7 +94,9 @@ public class Main {
       String line = scn.nextLine();
 
       try {
-        m.handleUserInput(line).Solve();
+        //return loop continuation
+        m.handleUserInput(line);
+
       } catch(Exception e) {
         System.err.println(e.getMessage());
         System.exit(1);
@@ -102,7 +104,7 @@ public class Main {
     }while(true);
   }
 
-  private Question handleUserInput(String line) throws Exception {
+  private void handleUserInput(String line) throws Exception {
     switch(line) {
       case "list":
         listQuestions();
@@ -114,15 +116,23 @@ public class Main {
         System.exit(0);
         break;
       default:
-        String[] lnSplit = line.split(" ");
-        if(lnSplit.length == 2) {
-          return selectProblem(lnSplit[0].charAt(0),
-                  Integer.parseInt(lnSplit[1]));
-        } else {
-          throw new Exception("Unknown command");
-        }
+        handleQuestionSolution(line);    
     }
-    return new Question();
+  }
+  
+  private void handleQuestionSolution(String line) throws Exception {
+    Question quest;
+    String[] lnSplit = line.split(" ");
+    
+    if(lnSplit.length == 2) {
+      quest = Objects.requireNonNull(selectProblem(lnSplit[0].charAt(0),
+              Integer.parseInt(lnSplit[1])));
+
+      System.out.println(quest.getQuestion() + "\n");
+      quest.solve();
+    } else {
+      throw new Exception("Unknown command");
+    }
   }
 
   private Question selectProblem(char sec, int num) throws Exception {
@@ -130,56 +140,56 @@ public class Main {
       case 'a':
         switch(num) {
           case 1:
-            return new Question();
+            return null;
           case 2:
-            return new Question();
+            return null;
           case 3:
-            return new Question();
+            return null;
           case 4:
-            return new Question();
+            return null;
           case 5:
-            return new Question();
+            return null;
           case 6:
-            return new Question();
+            return null;
           case 7:
-            return new Question();
+            return null;
           case 8:
-            return new Question();
+            return null;
           case 9:
-            return new Question();
+            return null;
           case 10:
-            return new Question();
+            return null;
           case 11:
-            return new Question();
+            return null;
           case 12:
-            return new Question();
+            return null;
           case 13:
-            return new Question();
+            return null;
           case 14:
-            return new Question();
+            return null;
           case 15:
-            return new Question();
+            return null;
           default:
             throw new Exception("unknown section number");
         }
       case 'b':
         switch(num) {
           case 1:
-            return new Question();
+            return null;
           case 2:
-            return new Question();
+            return null;
           case 3:
-            return new Question();
+            return null;
           case 4:
-            return new Question();
+            return null;
           case 5:
-            return new Question();
+            return null;
           case 6:
-            return new Question();
+            return null;
           case 7:
-            return new Question();
+            return null;
           case 8:
-            return new Question();
+            return null;
           default:
             throw new Exception("unknown section number");
         }
@@ -187,79 +197,79 @@ public class Main {
 
         switch(num) {
           case 1:
-            return new Question();
+            return null;
           case 2:
-            return new Question();
+            return null;
           case 3:
-            return new Question();
+            return null;
           case 4:
-            return new Question();
+            return null;
           case 5:
-            return new Question();
+            return null;
           case 6:
-            return new Question();
+            return null;
           case 7:
-            return new Question();
+            return null;
           case 8:
-            return new Question();
+            return null;
           case 9:
-            return new Question();
+            return null;
           case 10:
-            return new Question();
+            return null;
           case 11:
-            return new Question();
+            return null;
           case 12:
-            return new Question();
+            return null;
           case 13:
-            return new Question();
+            return null;
           default:
             throw new Exception("unknown section number");
         }
       case 'd':
         switch(num) {
           case 1:
-            return new Question();
+            return null;
           case 2:
-            return new Question();
+            return null;
           case 3:
-            return new Question();
+            return null;
           case 4:
-            return new Question();
+            return null;
           case 5:
-            return new Question();
+            return null;
           case 6:
-            return new Question();
+            return null;
           case 7:
-            return new Question();
+            return null;
           case 8:
-            return new Question();
+            return null;
           case 9:
-            return new Question();
+            return null;
           case 10:
-            return new Question();
+            return null;
           case 11:
-            return new Question();
+            return null;
           case 12:
-            return new Question();
+            return null;
           case 13:
-            return new Question();
+            return null;
           case 14:
-            return new Question();
+            return null;
           default:
             throw new Exception("unknown section number");
         }
       case 'e':
         switch(num) {
           case 1:
-            return new Question();
+            return null;
           case 2:
-            return new Question();
+            return null;
           case 3:
-            return new Question();
+            return null;
           case 4:
-            return new Question();
+            return null;
           case 5:
-            return new Question();
+            return null;
           default:
             throw new Exception("unknown section number");
         }

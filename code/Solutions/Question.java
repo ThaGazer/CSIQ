@@ -1,31 +1,24 @@
 /*
  * Author: ThaGazer
- * File: null.java
- * Date: 4/26/2019
+ * File:Solutions/ null.java
+ * Date: 4/30/2019
  */
 package Solutions;
 
-import java.util.Objects;
+public class Question implements Problem {
 
-public class Question {
-
-  //messages to be prints to user
-  private static final String msgBaseQuestion = "What does life even mean...";
-
-  protected String questionName;
+  protected String question = "What is the meaning of being?";
 
   public Question() {
   }
 
-  public Question(String name) throws Exception {
-    if(Objects.nonNull(name)) {
-      questionName = name;
-    } else {
-      throw new Exception();
-    }
+  @Override
+  public String getQuestion() {
+    return question;
   }
 
-  public void Solve() {
-    System.out.println(msgBaseQuestion);
+  @Override
+  public void solve() {
+    System.out.println("To be or not to be");
   }
 }
