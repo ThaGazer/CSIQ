@@ -85,12 +85,10 @@ public class Main {
 
   public static void main(String[] args) {
     Main m = new Main();
-    Question quest;
     Scanner scn = new Scanner(System.in);
 
     do {
       System.out.print(msgEntry);
-
       String line = scn.nextLine();
 
       try {
@@ -107,12 +105,16 @@ public class Main {
   private void handleUserInput(String line) throws Exception {
     switch(line) {
       case "list":
+      case "l":
         listQuestions();
         break;
       case "help":
+      case "h":
         listHelp();
         break;
       case "quit":
+      case "q":
+      case "exit":
         System.exit(0);
         break;
       default:
@@ -128,7 +130,7 @@ public class Main {
       quest = Objects.requireNonNull(selectProblem(lnSplit[0].charAt(0),
               Integer.parseInt(lnSplit[1])));
 
-      System.out.println(quest.getQuestion() + "\n");
+      System.out.println("Question: " + quest.getQuestion() + "\n");
       quest.solve();
     } else {
       throw new Exception("Unknown command");
@@ -140,7 +142,7 @@ public class Main {
       case 'a':
         switch(num) {
           case 1:
-            return null;
+            return new FrequentInt();
           case 2:
             return null;
           case 3:
