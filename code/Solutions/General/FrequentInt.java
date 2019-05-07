@@ -3,7 +3,9 @@
  * File:Solutions/ null.java
  * Date: 4/30/2019
  */
-package Solutions;
+package Solutions.General;
+
+import Solutions.Question;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -53,7 +55,7 @@ public class FrequentInt extends Question {
   }
 
   private void genIntArray(int[] arr) {
-    System.out.print("Test array:\n[");
+    System.out.print("Test array:\n");
     for(int i = 0; i < ARRAY_LENGTH; i++) {
       arr[i] = new Random().nextInt(50);
     }

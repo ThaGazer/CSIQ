@@ -6,6 +6,9 @@
 
 
 import Solutions.*;
+import Solutions.General.FrequentInt;
+import Solutions.General.IntPairs;
+
 import java.util.*;
 
 /**
@@ -144,7 +147,7 @@ public class Main {
           case 1:
             return new FrequentInt();
           case 2:
-            return null;
+            return new IntPairs();
           case 3:
             return null;
           case 4:
