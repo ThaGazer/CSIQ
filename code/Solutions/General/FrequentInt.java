@@ -7,17 +7,15 @@ package Solutions.General;
 
 import Solutions.Question;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
 public class FrequentInt extends Question {
 
-  private int ARRAY_LENGTH;
+  private int ARRAY_LENGTH = new Random().nextInt(50) + 1;
 
   public FrequentInt() {
     this.question = "Find the most frequent int in an array";
-    ARRAY_LENGTH = new Random().nextInt(50) + 1;
   }
 
   @Override
@@ -52,13 +50,5 @@ public class FrequentInt extends Question {
       System.out.println(i + " : " + freqInt.get(i));
     }
     System.out.println("The most frequent integer is: " + mostVal);
-  }
-
-  private void genIntArray(int[] arr) {
-    System.out.print("Test array:\n");
-    for(int i = 0; i < ARRAY_LENGTH; i++) {
-      arr[i] = new Random().nextInt(50);
-    }
-    System.out.println(Arrays.toString(arr) + "\n");
   }
 }

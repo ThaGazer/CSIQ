@@ -5,6 +5,9 @@
  */
 package Solutions;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class Question implements Problem {
 
   protected String question = "What is the meaning of being?";
@@ -20,5 +23,13 @@ public class Question implements Problem {
   @Override
   public void solve() {
     System.out.println("To be or not to be");
+  }
+
+  protected void genIntArray(int[] arr) {
+    System.out.print("Test array:\n");
+    for(int i = 0; i < arr.length; i++) {
+      arr[i] = new Random().nextInt(50);
+    }
+    System.out.println(Arrays.toString(arr) + "\n");
   }
 }
