@@ -22,7 +22,7 @@ public class Question implements Problem {
 
   @Override
   public void solve() {
-    System.out.println("To be or not to be");
+    System.out.println(getQuestion());
   }
 
   protected void genIntArray(int[] arr) {
