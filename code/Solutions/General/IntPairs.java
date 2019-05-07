@@ -23,11 +23,6 @@ public class IntPairs extends Question {
   }
 
   @Override
-  public String getQuestion() {
-    return this.question;
-  }
-
-  @Override
   public void solve() {
     super.solve();
 
@@ -36,16 +31,16 @@ public class IntPairs extends Question {
 
     System.out.println("Searching for pairs that sum to: " + PAIRED_SUM);
 
-    HashSet<Integer> cheackedInt = new HashSet<>();
+    HashSet<Integer> checkedInt = new HashSet<>();
     TreeMap<Integer, Integer> pairs = new TreeMap<>();
     for(int i : arr) {
       int oppoPair = PAIRED_SUM - i;
 
-      if(oppoPair > 0 && cheackedInt.contains(oppoPair)) {
+      if(oppoPair > 0 && checkedInt.contains(oppoPair)) {
         pairs.put(i, oppoPair);
       }
 
-      cheackedInt.add(i);
+      checkedInt.add(i);
     }
 
     System.out.println("Pairs that sum to " + PAIRED_SUM + " are: \n" + pairs);
