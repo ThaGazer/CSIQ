@@ -39,7 +39,6 @@ public class FrequentInt extends Question {
       }
     }
 
-
     int mostFreq = 0;
     int mostVal = -1;
 

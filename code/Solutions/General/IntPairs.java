@@ -16,7 +16,6 @@ public class IntPairs extends Question {
   private int ARRAY_LENGTH = new Random().nextInt(50) + 1;
   private int PAIRED_SUM = new Random().nextInt(50) + 1;
 
-
   public IntPairs() {
     this.question = "Find pairs in an integer array whose sum is equal to a " +
             "random number (bonus: do it in linear time)";
