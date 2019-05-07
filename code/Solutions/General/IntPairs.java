@@ -6,12 +6,15 @@
 package Solutions.General;
 
 import Solutions.Question;
+
+import java.util.HashSet;
 import java.util.Random;
+import java.util.TreeMap;
 
 public class IntPairs extends Question {
 
-  private int ARRAY_LENGTH = new Random().nextInt(Integer.MAX_VALUE/32) + 1;
-  private int PAIRED_SUM = new Random().nextInt(Integer.MAX_VALUE/32) + 1;
+  private int ARRAY_LENGTH = new Random().nextInt(50) + 1;
+  private int PAIRED_SUM = new Random().nextInt(50) + 1;
 
 
   public IntPairs() {
@@ -31,9 +34,20 @@ public class IntPairs extends Question {
     int[] arr = new int[ARRAY_LENGTH];
     genIntArray(arr);
 
-    System.out.println("");
-    for(int i : arr) {
+    System.out.println("Searching for pairs that sum to: " + PAIRED_SUM);
 
+    HashSet<Integer> cheackedInt = new HashSet<>();
+    TreeMap<Integer, Integer> pairs = new TreeMap<>();
+    for(int i : arr) {
+      int oppoPair = PAIRED_SUM - i;
+
+      if(oppoPair > 0 && cheackedInt.contains(oppoPair)) {
+        pairs.put(i, oppoPair);
+      }
+
+      cheackedInt.add(i);
     }
+
+    System.out.println("Pairs that sum to " + PAIRED_SUM + " are: \n" + pairs);
   }
 }
