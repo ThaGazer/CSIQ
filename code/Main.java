@@ -6,10 +6,7 @@
 
 
 import Solutions.*;
-import Solutions.General.FrequentInt;
-import Solutions.General.IntPairs;
-import Solutions.General.IterFibonacci;
-import Solutions.General.RecurFibonacci;
+import Solutions.General.*;
 
 import java.util.*;
 
@@ -97,7 +94,7 @@ public class Main {
       String line = scn.nextLine();
 
       try {
-        //return loop continuation
+        //TODO return loop continuation/no need to loop forever
         m.handleUserInput(line);
 
       } catch(Exception e) {
@@ -155,7 +152,7 @@ public class Main {
           case 4:
             return new RecurFibonacci();
           case 5:
-            return null;
+            return new CommonElements();
           case 6:
             return null;
           case 7:

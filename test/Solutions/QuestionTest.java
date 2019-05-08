@@ -4,10 +4,7 @@ package Solutions;/*
  * Date: 4/30/2019
  */
 
-import Solutions.General.FrequentInt;
-import Solutions.General.IntPairs;
-import Solutions.General.IterFibonacci;
-import Solutions.General.RecurFibonacci;
+import Solutions.General.*;
 import org.junit.jupiter.api.Test;
 
 class QuestionTest {
@@ -30,6 +27,19 @@ class QuestionTest {
   @Test
   public void RecurFibonacci() {
     tests(new RecurFibonacci());
+  }
+
+  @Test
+  public void CommonElementsTest() {
+    tests(new CommonElements());
+  }
+
+  @Test
+  public void CommonElementsAltTest() {
+    CommonElements com = new CommonElements();
+
+    System.out.println("\n[Test]" + com.getQuestion());
+    com.altSolve();
   }
 
   private void tests(Question quest) {
