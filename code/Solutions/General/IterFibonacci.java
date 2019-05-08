@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class IterFibonacci extends Question {
 
-  private final int MAX_ITER = 64;
+  private final int MAX_ITER = 72;
 
   public IterFibonacci() {
     this.question = "Write fibonacci iteratively(bonus: use dynamic programming)";
