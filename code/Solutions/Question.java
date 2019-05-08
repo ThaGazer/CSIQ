@@ -22,7 +22,7 @@ public class Question implements Problem {
 
   @Override
   public void solve() {
-    System.out.println(getQuestion() + "\n");
+    System.out.println("idk... probably 42");
   }
 
   protected void genIntArray(int[] arr) {

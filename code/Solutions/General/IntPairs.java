@@ -23,8 +23,6 @@ public class IntPairs extends Question {
 
   @Override
   public void solve() {
-    super.solve();
-
     int[] arr = new int[ARRAY_LENGTH];
     genIntArray(arr);
 

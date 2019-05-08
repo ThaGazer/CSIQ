@@ -8,6 +8,8 @@
 import Solutions.*;
 import Solutions.General.FrequentInt;
 import Solutions.General.IntPairs;
+import Solutions.General.IterFibonacci;
+import Solutions.General.RecurFibonacci;
 
 import java.util.*;
 
@@ -149,9 +151,9 @@ public class Main {
           case 2:
             return new IntPairs();
           case 3:
-            return null;
+            return new IterFibonacci();
           case 4:
-            return null;
+            return new RecurFibonacci();
           case 5:
             return null;
           case 6:
