@@ -42,6 +42,11 @@ class QuestionTest {
     com.altSolve();
   }
 
+  @Test
+  public void BinarySearchTest() {
+    tests(new BinarySearch());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();
