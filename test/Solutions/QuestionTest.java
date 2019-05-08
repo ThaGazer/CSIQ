@@ -6,6 +6,7 @@ package Solutions;/*
 
 import Solutions.General.FrequentInt;
 import Solutions.General.IntPairs;
+import Solutions.General.IterFibonacci;
 import org.junit.jupiter.api.Test;
 
 class QuestionTest {
@@ -18,6 +19,11 @@ class QuestionTest {
   @Test
   public void IntPairsTest() {
     tests(new IntPairs());
+  }
+
+  @Test
+  public void IterFibonacci() {
+    tests(new IterFibonacci());
   }
 
   private void tests(Question quest) {
