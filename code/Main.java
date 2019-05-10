@@ -27,7 +27,6 @@ public class Main {
                   "Write fibonacci recursively (bonus: use dynamic programming)",
                   "Find the common elements of 2 int arrays",
                   "Implement binary search of a sorted array of integers",
-                  "Implement binary search in a rotated array (ex. {5,6,7,8,1,2,3})",
                   "Use dynamic programming to find the first X prime numbers",
                   "Write a function that prints out the binary form of an int",
                   "Implement parseInt",
@@ -148,13 +147,13 @@ public class Main {
           case 2:
             return new IntPairs();
           case 3:
-            return new IterFibonacci();
+            return new RotatedArrays();
           case 4:
-            return new RecurFibonacci();
+            return new IterFibonacci();
           case 5:
-            return new CommonElements();
+            return new RecurFibonacci();
           case 6:
-            return null;
+            return new CommonElements();
           case 7:
             return null;
           case 8:
