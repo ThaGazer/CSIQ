@@ -47,6 +47,11 @@ class QuestionTest {
     tests(new BinarySearch());
   }
 
+  @Test
+  public void Binary2Int() {
+    tests(new Binary2Int());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();

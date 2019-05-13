@@ -28,7 +28,7 @@ public class Main {
                   "Find the common elements of 2 int arrays",
                   "Implement binary search of a sorted array of integers",
                   "Use dynamic programming to find the first X prime numbers",
-                  "Write a function that prints out the binary form of an int",
+                  "Write a function that converts an int to binary",
                   "Implement parseInt",
                   "Implement squareroot function",
                   "Implement an exponent function (bonus: now try in log(n) time)",
