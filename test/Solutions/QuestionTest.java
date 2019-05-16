@@ -52,6 +52,11 @@ class QuestionTest {
     tests(new Binary2Int());
   }
 
+  @Test
+  public void SquareRootTest() {
+    tests(new SquareRoot());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();
