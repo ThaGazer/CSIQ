@@ -158,7 +158,7 @@ public class Main {
           case 7:
             return new BinarySearch();
           case 8:
-            return null;
+            return new GenPrime();
           case 9:
             return new Binary2Int();
           case 10:

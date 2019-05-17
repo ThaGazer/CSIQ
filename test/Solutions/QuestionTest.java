@@ -62,6 +62,11 @@ class QuestionTest {
     tests(new NonMultiMultiply());
   }
 
+  @Test
+  public void GenPrimTest() {
+    tests(new GenPrime());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();
