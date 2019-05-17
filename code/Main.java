@@ -28,6 +28,7 @@ public class Main {
                   "Find the common elements of 2 int arrays",
                   "Implement binary search of a sorted array of integers",
                   "Use dynamic programming to find the first X prime numbers",
+                  "Write a function that converts an binary to int",
                   "Write a function that converts an int to binary",
                   "Implement parseInt",
                   "Implement square root function",
@@ -155,17 +156,17 @@ public class Main {
           case 6:
             return new CommonElements();
           case 7:
-            return null;
+            return new BinarySearch();
           case 8:
             return null;
           case 9:
-            return null;
+            return new Binary2Int();
           case 10:
             return null;
           case 11:
             return null;
           case 12:
-            return null;
+            return new SquareRoot();
           case 13:
             return null;
           case 14:

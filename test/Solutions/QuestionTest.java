@@ -57,6 +57,11 @@ class QuestionTest {
     tests(new SquareRoot());
   }
 
+  @Test
+  public void NonMultiMultiplyTest() {
+    tests(new NonMultiMultiply());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();
