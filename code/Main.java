@@ -36,7 +36,6 @@ public class Main {
                   "Implement an exponent function (bonus: try in log(n) time)",
                   "Given a function rand5() that returns a random int between 0 and 5, implement rand7()",
                   "Given a 2D array of 1s and 0s, count the number of \"islands of 1s\" (e.g. groups of connecting 1s)"},
-
           {"Strings",
                   "Find the first non-repeated character in a String",
                   "Reverse a String iteratively and recursively",
@@ -46,10 +45,10 @@ public class Main {
                   "Determine if a String is an int or a double",
                   "Find the shortest palindrome in a String",
                   "Print all permutations of a String"},
-
           {"Trees",
+                  "Print a tree using BFS",
+                  "Print a tree using DFS",
                   "Implement a BST with insert and delete functions",
-                  "Print a tree using BFS and DFS",
                   "Write a function that determines if a tree is a BST",
                   "Find the smallest element in a BST",
                   "Find the 2nd largest number in a BST",
@@ -60,8 +59,8 @@ public class Main {
                   "Given a binary tree which is a sum tree, write an algorithm to determine whether the tree is a valid sum tree",
                   "Given a tree, verify that it contains a subtree.",
                   "Find the max distance between 2 nodes in a BST.",
-                  "Construct a BST given the pre-order and in-order traversal Strings"},
-
+                  "Construct a BST given the pre-order traversal Strings",
+                  "Construct a BST given the In-order traversal Strings"},
           {"Lists",
                   "Implement a stack with push and pop functions",
                   "Implement a queue with queue and dequeue functions",
@@ -73,10 +72,10 @@ public class Main {
                   "Find the Nth element in a linked list",
                   "Remove the Nth element of a linked list",
                   "Check if a linked list has cycles",
-                  "Given a circular linked list, find the node at the beginning of the loop. Example: A-->B-->C --> D-->E -->C, C is the node that begins the loop",
+                  "Given a circular linked list, find the node at the beginning of the loop. Example: A-->B-->C-->D-->E-->C, C is the node that begins the loop",
                   "Check whether a link list is a palindrome",
-                  "Reverse a linked list iteratively and recursively"},
-
+                  "Reverse a linked list iteratively",
+                  "Reverse a linked list recursively"},
           {"Sorting",
                   "Implement bubble sort",
                   "Implement selection sort",
@@ -162,16 +161,22 @@ public class Main {
           case 9:
             return new Binary2Int();
           case 10:
+            //TODO I2B
             return null;
           case 11:
-            return null;
+            return new ParseInt();
           case 12:
             return new SquareRoot();
           case 13:
-            return null;
+            return new NonMultiMultiply();
           case 14:
+            //TODO Exponent
             return null;
           case 15:
+            //TODO Rand7
+            return null;
+          case 16:
+            //TODO IslandGroupings
             return null;
           default:
             throw new Exception("unknown section number");
@@ -179,20 +184,31 @@ public class Main {
       case 'b':
         switch(num) {
           case 1:
+            //TODO NonRepeat
             return null;
           case 2:
+            //TODO ItrReverse
             return null;
           case 3:
+            //TODO RecurReverse
             return null;
           case 4:
+            //TODO Anagrams
             return null;
           case 5:
+            //TODO Palindrome
             return null;
           case 6:
+            //TODO MinPalindrome
             return null;
           case 7:
+            //TODO Unique
             return null;
           case 8:
+            //TODO IsNum
+            return null;
+          case 9:
+            //TODO Permutations
             return null;
           default:
             throw new Exception("unknown section number");
@@ -201,30 +217,46 @@ public class Main {
 
         switch(num) {
           case 1:
+            //TODO OutBFS
             return null;
           case 2:
+            //TODO OutDFS
             return null;
           case 3:
+            //TODO BST
             return null;
           case 4:
+            //TODO IsBST
             return null;
           case 5:
+            //TODO MinElement
             return null;
           case 6:
+            //TODO NextMinElement
             return null;
           case 7:
+            //TODO IsSumTree
             return null;
           case 8:
+            //TODO NodeDistance
             return null;
           case 9:
+            //TODO NodeCoordinates
             return null;
           case 10:
+            //TODO TreeByLevel
             return null;
           case 11:
+            //TODO IsSumTree
             return null;
           case 12:
+            //TODO ContainsSubTree
             return null;
           case 13:
+            //TODO PreOrderTraversal
+            return null;
+          case 14:
+            //TODO InOrderTraversal
             return null;
           default:
             throw new Exception("unknown section number");
@@ -232,32 +264,46 @@ public class Main {
       case 'd':
         switch(num) {
           case 1:
+            //TODO Stack
             return null;
           case 2:
+            //TODO Queue
             return null;
           case 3:
+            //TODO MinStack
             return null;
           case 4:
+            //TODO SortedStack
             return null;
           case 5:
+            //TODO MinHeap
             return null;
           case 6:
+            //TODO Que2Stacks
             return null;
           case 7:
+            //TODO LinkedList
             return null;
           case 8:
+            //TODO ContainsElement
             return null;
           case 9:
+            //TODO RemoveNthElement
             return null;
           case 10:
+            //TODO ContainsCycle
             return null;
           case 11:
+            //TODO FindStartNode
             return null;
           case 12:
+            //TODO ContainsPalindrome
             return null;
           case 13:
+            //TODO ReverseIteratively
             return null;
           case 14:
+            //TODO ReverseRecursively
             return null;
           default:
             throw new Exception("unknown section number");
@@ -265,14 +311,19 @@ public class Main {
       case 'e':
         switch(num) {
           case 1:
+            //TODO BubbleSort
             return null;
           case 2:
+            //TODO SelectionSort
             return null;
           case 3:
+            //TODO InsertionSort
             return null;
           case 4:
+            //TODO MergeSort
             return null;
           case 5:
+            //TODO QuickSort
             return null;
           default:
             throw new Exception("unknown section number");

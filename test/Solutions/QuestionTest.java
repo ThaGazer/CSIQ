@@ -67,6 +67,11 @@ class QuestionTest {
     tests(new GenPrime());
   }
 
+  @Test
+  public void ParseInt() {
+    tests(new ParseInt());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();
