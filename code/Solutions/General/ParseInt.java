@@ -6,12 +6,11 @@
 package Solutions.General;
 
 import Solutions.Question;
-
 import java.util.Random;
 
 public class ParseInt extends Question {
 
-  Random rnd = new Random(System.currentTimeMillis());
+  private Random rnd = new Random(System.currentTimeMillis());
 
   public ParseInt() {
     this.question = "Implement parseInt";
