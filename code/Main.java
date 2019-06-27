@@ -16,7 +16,7 @@ import java.util.*;
 public class Main {
 
   private static final String msgEntry = ":>";
-  private static final String msgHelp = "help\nlist\n[section][problem] ex. a1";
+  private static final String msgHelp = "Commands:\n\nhelp\nlist\n[section][problem] ex. a1";
 
   private static final String[][] Questions = {
           {"General",
@@ -93,25 +93,24 @@ public class Main {
       String line = scn.nextLine();
 
       try {
-        //TODO return loop continuation/no need to loop forever
-        m.handleUserInput(line);
-
+        //TODO return loop continuation /or no need to loop forever?
+        m.handleUserInput(line.split(" "));
       } catch(Exception e) {
         System.err.println(e.getMessage());
         System.exit(1);
       }
-    }while(true);
+    } while(true);
   }
 
-  private void handleUserInput(String line) throws Exception {
-    switch(line) {
+  private void handleUserInput(String[] commands) throws Exception {
+    switch(commands[0]) {
       case "list":
       case "l":
-        listQuestions();
+        listQuestions(commands);
         break;
       case "help":
       case "h":
-        listHelp();
+        printHelp();
         break;
       case "quit":
       case "q":
@@ -119,17 +118,16 @@ public class Main {
         System.exit(0);
         break;
       default:
-        handleQuestionSolution(line);    
+        handleQuestionSolution(commands);
     }
   }
-  
-  private void handleQuestionSolution(String line) throws Exception {
+
+  private void handleQuestionSolution(String[] command) throws Exception {
     Question quest;
-    String[] lnSplit = line.split(" ");
-    
-    if(lnSplit.length == 2) {
-      quest = Objects.requireNonNull(selectProblem(lnSplit[0].charAt(0),
-              Integer.parseInt(lnSplit[1])));
+
+    if(command.length == 2) {
+      quest = Objects.requireNonNull(selectProblem(command[0].charAt(0),
+              Integer.parseInt(command[1])));
 
       System.out.println("Question: " + quest.getQuestion() + "\n");
       quest.solve();
@@ -162,7 +160,7 @@ public class Main {
             return new Binary2Int();
           case 10:
             //TODO I2B
-            return null;
+            return new Question();
           case 11:
             return new ParseInt();
           case 12:
@@ -171,13 +169,13 @@ public class Main {
             return new NonMultiMultiply();
           case 14:
             //TODO Exponent
-            return null;
+            return new Question();
           case 15:
             //TODO Rand7
-            return null;
+            return new Question();
           case 16:
             //TODO IslandGroupings
-            return null;
+            return new Question();
           default:
             throw new Exception("unknown section number");
         }
@@ -185,31 +183,31 @@ public class Main {
         switch(num) {
           case 1:
             //TODO NonRepeat
-            return null;
+            return new Question();
           case 2:
             //TODO ItrReverse
-            return null;
+            return new Question();
           case 3:
             //TODO RecurReverse
-            return null;
+            return new Question();
           case 4:
             //TODO Anagrams
-            return null;
+            return new Question();
           case 5:
             //TODO Palindrome
-            return null;
+            return new Question();
           case 6:
             //TODO MinPalindrome
-            return null;
+            return new Question();
           case 7:
             //TODO Unique
-            return null;
+            return new Question();
           case 8:
             //TODO IsNum
-            return null;
+            return new Question();
           case 9:
             //TODO Permutations
-            return null;
+            return new Question();
           default:
             throw new Exception("unknown section number");
         }
@@ -218,46 +216,46 @@ public class Main {
         switch(num) {
           case 1:
             //TODO OutBFS
-            return null;
+            return new Question();
           case 2:
             //TODO OutDFS
-            return null;
+            return new Question();
           case 3:
             //TODO BST
-            return null;
+            return new Question();
           case 4:
             //TODO IsBST
-            return null;
+            return new Question();
           case 5:
             //TODO MinElement
-            return null;
+            return new Question();
           case 6:
             //TODO NextMinElement
-            return null;
+            return new Question();
           case 7:
             //TODO IsSumTree
-            return null;
+            return new Question();
           case 8:
             //TODO NodeDistance
-            return null;
+            return new Question();
           case 9:
             //TODO NodeCoordinates
-            return null;
+            return new Question();
           case 10:
             //TODO TreeByLevel
-            return null;
+            return new Question();
           case 11:
             //TODO IsSumTree
-            return null;
+            return new Question();
           case 12:
             //TODO ContainsSubTree
-            return null;
+            return new Question();
           case 13:
             //TODO PreOrderTraversal
-            return null;
+            return new Question();
           case 14:
             //TODO InOrderTraversal
-            return null;
+            return new Question();
           default:
             throw new Exception("unknown section number");
         }
@@ -265,46 +263,46 @@ public class Main {
         switch(num) {
           case 1:
             //TODO Stack
-            return null;
+            return new Question();
           case 2:
             //TODO Queue
-            return null;
+            return new Question();
           case 3:
             //TODO MinStack
-            return null;
+            return new Question();
           case 4:
             //TODO SortedStack
-            return null;
+            return new Question();
           case 5:
             //TODO MinHeap
-            return null;
+            return new Question();
           case 6:
             //TODO Que2Stacks
-            return null;
+            return new Question();
           case 7:
             //TODO LinkedList
-            return null;
+            return new Question();
           case 8:
             //TODO ContainsElement
-            return null;
+            return new Question();
           case 9:
             //TODO RemoveNthElement
-            return null;
+            return new Question();
           case 10:
             //TODO ContainsCycle
-            return null;
+            return new Question();
           case 11:
             //TODO FindStartNode
-            return null;
+            return new Question();
           case 12:
             //TODO ContainsPalindrome
-            return null;
+            return new Question();
           case 13:
             //TODO ReverseIteratively
-            return null;
+            return new Question();
           case 14:
             //TODO ReverseRecursively
-            return null;
+            return new Question();
           default:
             throw new Exception("unknown section number");
         }
@@ -312,19 +310,19 @@ public class Main {
         switch(num) {
           case 1:
             //TODO BubbleSort
-            return null;
+            return new Question();
           case 2:
             //TODO SelectionSort
-            return null;
+            return new Question();
           case 3:
             //TODO InsertionSort
-            return null;
+            return new Question();
           case 4:
             //TODO MergeSort
-            return null;
+            return new Question();
           case 5:
             //TODO QuickSort
-            return null;
+            return new Question();
           default:
             throw new Exception("unknown section number");
         }
@@ -333,19 +331,40 @@ public class Main {
     }
   }
 
-  private void listQuestions() {
-    for(int i = 0; i < Questions.length; i++) {
-      for(int j = 0; j < Questions[i].length; j++) {
-        if(j == 0) {
-          System.out.println((char)('A'+i) + ". " + Questions[i][j]);
-        } else {
-          System.out.println("  " + j + ". " + Questions[i][j]);
+  private void listQuestions(String[] command) {
+    switch(command.length) {
+      case 1:
+        for(int i = 0; i < Questions.length; i++) {
+          printQuestionGroup(i);
         }
+        break;
+      case 2:
+        printQuestionGroup(command[1].toLowerCase().charAt(0) - 'a');
+        break;
+      case 3:
+        printQuestion(command[1].toLowerCase().charAt(0) - 'a', Integer.parseInt(command[2]));
+        break;
+    }
+  }
+
+  private void printQuestionGroup(int idx) {
+    if(idx >= 0 && idx < Questions.length) {
+      System.out.print((char) ('A' + idx) + ". ");
+      for(int i = 0; i < Questions[idx].length; i++) {
+        printQuestion(idx, i);
       }
     }
   }
 
-  private void listHelp() {
+  private void printQuestion(int i, int j) {
+    if(j == 0) {
+      System.out.println(Questions[i][j]);
+    } else {
+      System.out.println("  " + j + ". " + Questions[i][j]);
+    }
+  }
+
+  private void printHelp() {
     System.out.println(msgHelp);
   }
 }
