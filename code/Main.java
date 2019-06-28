@@ -168,7 +168,6 @@ public class Main {
           case 13:
             return new NonMultiMultiply();
           case 14:
-            //TODO Exponent
             return new Exponent();
           case 15:
             //TODO Rand7
