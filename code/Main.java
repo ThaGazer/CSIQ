@@ -169,7 +169,7 @@ public class Main {
             return new NonMultiMultiply();
           case 14:
             //TODO Exponent
-            return new Question();
+            return new Exponent();
           case 15:
             //TODO Rand7
             return new Question();

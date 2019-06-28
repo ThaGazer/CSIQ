@@ -68,8 +68,13 @@ class QuestionTest {
   }
 
   @Test
-  public void ParseInt() {
+  public void ParseIntTest() {
     tests(new ParseInt());
+  }
+
+  @Test
+  public void ExponentTest() {
+    tests(new Exponent());
   }
 
   private void tests(Question quest) {
