@@ -77,6 +77,10 @@ class QuestionTest {
     tests(new Exponent());
   }
 
+  @Test void IslandGroupings() {
+    tests(new IslandGroupings());
+  }
+
   private void tests(Question quest) {
     System.out.println("\n[Test]" + quest.getQuestion());
     quest.solve();
