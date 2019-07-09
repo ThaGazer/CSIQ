@@ -173,8 +173,7 @@ public class Main {
             //TODO Rand7
             return new Question();
           case 16:
-            //TODO IslandGroupings
-            return new Question();
+            return new IslandGroupings();
           default:
             throw new Exception("unknown section number");
         }
