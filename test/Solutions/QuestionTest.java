@@ -77,6 +77,13 @@ class QuestionTest {
     tests(new Exponent());
   }
 
+  @Test
+  public void Rand7Test() {
+    for(int i = 0; i < 10000; i++) {
+      tests(new Rand7());
+    }
+  }
+
   @Test void IslandGroupings() {
     tests(new IslandGroupings());
   }
