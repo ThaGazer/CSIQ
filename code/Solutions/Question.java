@@ -8,7 +8,7 @@ package Solutions;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Question implements Problem {
+public abstract class Question implements Problem {
 
   protected String question = "What is the meaning of being?";
 
@@ -21,9 +21,7 @@ public class Question implements Problem {
   }
 
   @Override
-  public void solve() {
-    System.out.println("idk... probably 42");
-  }
+  public abstract void solve();
 
   protected void genIntArray(int[] arr) {
     System.out.print("Test array:\n");
