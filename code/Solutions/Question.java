@@ -21,7 +21,21 @@ public abstract class Question implements Problem {
   }
 
   @Override
-  public abstract void solve();
+  public void solve() throws Exception {
+    solve(0);
+  }
+
+  @Override
+  public void solve(int i) throws Exception {
+    if(i == 0) {
+      solution();
+    } else {
+      throw new Exception();
+    }
+  }
+
+  @Override
+  public abstract void solution();
 
   protected void genIntArray(int[] arr) {
     System.out.print("Test array:\n");

@@ -16,7 +16,7 @@ public class RecurFibonacci extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     System.out.print("1, 1, ");
     recur(1L, 1L, 0);
   }

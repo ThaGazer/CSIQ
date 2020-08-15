@@ -19,7 +19,7 @@ public class CommonElements extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     int[] arr1 = new int[ARRAY_LENGTH];
     int[] arr2 = new int[ARRAY_LENGTH];
 

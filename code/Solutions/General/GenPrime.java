@@ -19,7 +19,7 @@ public class GenPrime extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     int amount = new Random(System.currentTimeMillis()).nextInt(21)+1;
     System.out.println("Showing " + amount + " prime numbers:");
 

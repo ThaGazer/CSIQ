@@ -10,4 +10,8 @@ import Solutions.Question;
 //TODO finish
 public class Int2Binary extends Question {
 
+  @Override
+  public void solution() {
+
+  }
 }

@@ -34,6 +34,7 @@ public class Main {
                   "Implement square root function",
                   "Write a multiply function that multiples 2 integers without using *",
                   "Implement an exponent function (bonus: try in log(n) time)",
+                  "Implement rand5() that returns a number between 0 and 5",
                   "Given a function rand5() that returns a random int between 0 and 5, implement rand7()",
                   "Given a 2D array of 1s and 0s, count the number of \"islands of 1s\" (e.g. groups of connecting 1s)"},
           {"Strings",
@@ -123,207 +124,26 @@ public class Main {
   }
 
   private void handleQuestionSolution(String[] command) throws Exception {
-    Question quest;
+    ProblemType pt;
 
     if(command.length == 2) {
-      quest = Objects.requireNonNull(selectProblem(command[0].charAt(0),
+      pt = Objects.requireNonNull(selectProblem(command[0].charAt(0),
               Integer.parseInt(command[1])));
 
-      System.out.println("Question: " + quest.getQuestion() + "\n");
-      quest.solve();
+      System.out.println("Question: " + pt.getDescription() + "\n");
+      pt.getFunction().solve();
     } else {
       throw new Exception("Unknown command");
     }
   }
 
-  private Question selectProblem(char sec, int num) throws Exception {
+  private ProblemType selectProblem(char sec, int num) throws Exception {
     switch(sec) {
       case 'a':
-        switch(num) {
-          case 1:
-            return new FrequentInt();
-          case 2:
-            return new IntPairs();
-          case 3:
-            return new RotatedArrays();
-          case 4:
-            return new IterFibonacci();
-          case 5:
-            return new RecurFibonacci();
-          case 6:
-            return new CommonElements();
-          case 7:
-            return new BinarySearch();
-          case 8:
-            return new GenPrime();
-          case 9:
-            return new Binary2Int();
-          case 10:
-            //TODO I2B
-            return new Question();
-          case 11:
-            return new ParseInt();
-          case 12:
-            return new SquareRoot();
-          case 13:
-            return new NonMultiMultiply();
-          case 14:
-            return new Exponent();
-          case 15:
-            //TODO Rand7
-            return new Question();
-          case 16:
-            return new IslandGroupings();
-          default:
-            throw new Exception("unknown section number");
-        }
+        return GENERAL.getByIndex(num);
       case 'b':
-        switch(num) {
-          case 1:
-            //TODO NonRepeat
-            return new Question();
-          case 2:
-            //TODO ItrReverse
-            return new Question();
-          case 3:
-            //TODO RecurReverse
-            return new Question();
-          case 4:
-            //TODO Anagrams
-            return new Question();
-          case 5:
-            //TODO Palindrome
-            return new Question();
-          case 6:
-            //TODO MinPalindrome
-            return new Question();
-          case 7:
-            //TODO Unique
-            return new Question();
-          case 8:
-            //TODO IsNum
-            return new Question();
-          case 9:
-            //TODO Permutations
-            return new Question();
-          default:
-            throw new Exception("unknown section number");
-        }
       case 'c':
-
-        switch(num) {
-          case 1:
-            //TODO OutBFS
-            return new Question();
-          case 2:
-            //TODO OutDFS
-            return new Question();
-          case 3:
-            //TODO BST
-            return new Question();
-          case 4:
-            //TODO IsBST
-            return new Question();
-          case 5:
-            //TODO MinElement
-            return new Question();
-          case 6:
-            //TODO NextMinElement
-            return new Question();
-          case 7:
-            //TODO IsSumTree
-            return new Question();
-          case 8:
-            //TODO NodeDistance
-            return new Question();
-          case 9:
-            //TODO NodeCoordinates
-            return new Question();
-          case 10:
-            //TODO TreeByLevel
-            return new Question();
-          case 11:
-            //TODO IsSumTree
-            return new Question();
-          case 12:
-            //TODO ContainsSubTree
-            return new Question();
-          case 13:
-            //TODO PreOrderTraversal
-            return new Question();
-          case 14:
-            //TODO InOrderTraversal
-            return new Question();
-          default:
-            throw new Exception("unknown section number");
-        }
       case 'd':
-        switch(num) {
-          case 1:
-            //TODO Stack
-            return new Question();
-          case 2:
-            //TODO Queue
-            return new Question();
-          case 3:
-            //TODO MinStack
-            return new Question();
-          case 4:
-            //TODO SortedStack
-            return new Question();
-          case 5:
-            //TODO MinHeap
-            return new Question();
-          case 6:
-            //TODO Que2Stacks
-            return new Question();
-          case 7:
-            //TODO LinkedList
-            return new Question();
-          case 8:
-            //TODO ContainsElement
-            return new Question();
-          case 9:
-            //TODO RemoveNthElement
-            return new Question();
-          case 10:
-            //TODO ContainsCycle
-            return new Question();
-          case 11:
-            //TODO FindStartNode
-            return new Question();
-          case 12:
-            //TODO ContainsPalindrome
-            return new Question();
-          case 13:
-            //TODO ReverseIteratively
-            return new Question();
-          case 14:
-            //TODO ReverseRecursively
-            return new Question();
-          default:
-            throw new Exception("unknown section number");
-        }
-      case 'e':
-        switch(num) {
-          case 1:
-            //TODO BubbleSort
-            return new Question();
-          case 2:
-            //TODO SelectionSort
-            return new Question();
-          case 3:
-            //TODO InsertionSort
-            return new Question();
-          case 4:
-            //TODO MergeSort
-            return new Question();
-          case 5:
-            //TODO QuickSort
-            return new Question();
-          default:
-            throw new Exception("unknown section number");
-        }
       default:
         throw new Exception("unknown question section");
     }

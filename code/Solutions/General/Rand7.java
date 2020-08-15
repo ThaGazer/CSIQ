@@ -17,15 +17,12 @@ public class Rand7 extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     System.out.println("A random number between 0 and 7: " + rand7());
   }
 
-  private int rand7() {
-    return (rand5()+rand5()) % 7;
-  }
-
-  private int rand5() {
-    return new Random().nextInt(5);
+  int rand7() {
+    Rand5 rnd = new Rand5();
+    return (rnd.rand5() + rnd.rand5()) % 7;
   }
 }

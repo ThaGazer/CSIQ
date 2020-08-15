@@ -18,7 +18,7 @@ public class IterFibonacci extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     ArrayList<Long> fib = new ArrayList<>();
     fib.add(1L);
     fib.add(1L);

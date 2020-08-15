@@ -5,6 +5,7 @@ package Solutions;/*
  */
 
 import Solutions.General.*;
+import Solutions.Strings.FirstSolo;
 import org.junit.jupiter.api.Test;
 
 class QuestionTest {
@@ -84,8 +85,14 @@ class QuestionTest {
     }
   }
 
-  @Test void IslandGroupings() {
+  @Test
+  public void IslandGroupings() {
     tests(new IslandGroupings());
+  }
+
+  @Test
+  public void FirstSoloTest() {
+    tests(new FirstSolo());
   }
 
   private void tests(Question quest) {

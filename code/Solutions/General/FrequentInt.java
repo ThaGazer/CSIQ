@@ -19,7 +19,7 @@ public class FrequentInt extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     int[] arr = new int[ARRAY_LENGTH];
     genIntArray(arr);
 

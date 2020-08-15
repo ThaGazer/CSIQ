@@ -23,7 +23,7 @@ public class IslandGroupings extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     int[] arr = genIntArray(ARRAY_LENGTH);
 
     System.out.println("Groupings of 1s: " + findGroupings_Count(arr));

@@ -17,7 +17,7 @@ public class ParseInt extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     String strInt = genInt(rnd.nextInt(8)+1);
     System.out.println("String:" + strInt);
     System.out.println("Integer:" + parseInt(strInt));

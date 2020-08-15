@@ -5,5 +5,16 @@
  */
 package Solutions.General;
 
-public class FizzBuzz {
+import Solutions.Question;
+
+public class FizzBuzz extends Question {
+  @Override
+  public String getQuestion() {
+    return null;
+  }
+
+  @Override
+  public void solution() {
+
+  }
 }

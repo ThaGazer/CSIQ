@@ -19,7 +19,7 @@ public class SquareRoot extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     int x = new Random(System.currentTimeMillis()).nextInt();
 
     System.out.println("The square root of " + x + " is: ");

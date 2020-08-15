@@ -15,7 +15,7 @@ public class Binary2Int extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     int randInt = 128;
 
     int2bin(randInt);

@@ -16,7 +16,7 @@ public class Exponent extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     Random rnd = new Random(System.nanoTime());
     int base = 2;
     int power = 8/*rnd.nextInt(32)*/;

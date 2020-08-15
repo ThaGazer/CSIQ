@@ -16,7 +16,7 @@ public class NonMultiMultiply extends Question {
   }
 
   @Override
-  public void solve() {
+  public void solution() {
     Random rnd = new Random(System.currentTimeMillis());
     int x = rnd.nextInt(Integer.MAX_VALUE);
     int y = rnd.nextInt(Integer.MAX_VALUE);
