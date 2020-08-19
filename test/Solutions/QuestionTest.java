@@ -8,95 +8,117 @@ import Solutions.General.*;
 import Solutions.Strings.FirstSolo;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 class QuestionTest {
 
   @Test
-  public void FrequentIntTest() {
+  void FrequentIntTest() {
     tests(new FrequentInt());
   }
 
   @Test
-  public void IntPairsTest() {
+  void IntPairsTest() {
     tests(new IntPairs());
   }
 
   @Test
-  public void IterFibonacci() {
+  void IterFibonacci() {
     tests(new IterFibonacci());
   }
 
   @Test
-  public void RecurFibonacci() {
+  void RecurFibonacci() {
     tests(new RecurFibonacci());
   }
 
   @Test
-  public void CommonElementsTest() {
+  void CommonElementsTest() {
     tests(new CommonElements());
   }
 
   @Test
-  public void CommonElementsAltTest() {
-    CommonElements com = new CommonElements();
+  void CommonElementsAltTest() {
 
-    System.out.println("\n[Test]" + com.getQuestion());
-    com.altSolve();
   }
 
   @Test
-  public void BinarySearchTest() {
+  void BinarySearchTest() {
     tests(new BinarySearch());
   }
 
   @Test
-  public void Binary2Int() {
+  void Binary2Int() {
     tests(new Binary2Int());
   }
 
   @Test
-  public void SquareRootTest() {
+  void SquareRootTest() {
     tests(new SquareRoot());
   }
 
   @Test
-  public void NonMultiMultiplyTest() {
+  void NonMultiMultiplyTest() {
     tests(new NonMultiMultiply());
   }
 
   @Test
-  public void GenPrimTest() {
+  void GenPrimTest() {
     tests(new GenPrime());
   }
 
   @Test
-  public void ParseIntTest() {
+  void ParseIntTest() {
     tests(new ParseInt());
   }
 
   @Test
-  public void ExponentTest() {
+  void ExponentTest() {
     tests(new Exponent());
   }
 
   @Test
-  public void Rand7Test() {
+  void Rand7Test() {
     for(int i = 0; i < 10000; i++) {
       tests(new Rand7());
     }
   }
 
   @Test
-  public void IslandGroupings() {
+  void IslandGroupings() {
     tests(new IslandGroupings());
   }
 
   @Test
-  public void FirstSoloTest() {
+  void FirstSoloTest() {
     tests(new FirstSolo());
   }
 
+  @Test
+  void FizzBuzzTest() {
+    tests(new FizzBuzz());
+  }
+
   private void tests(Question quest) {
+    ArrayList<String> times = new ArrayList<>();
+
     System.out.println("\n[Test]" + quest.getQuestion());
-    quest.solve();
+
+    boolean loop = true;
+    int i = 0;
+    while(loop) {
+      long start, stop;
+
+      try {
+        start = System.currentTimeMillis();
+        quest.solve(i);
+        stop = System.currentTimeMillis();
+        times.add("Solution " + i + ": " + (stop - start));
+      } catch(Exception e) {
+        loop = false;
+      }
+      i++;
+    }
+    System.out.println(times.toString());
   }
 }
