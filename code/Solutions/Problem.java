@@ -7,7 +7,7 @@ package Solutions;
 
 public interface Problem {
   String getQuestion();
-  void solve() throws Exception;
-  void solve(int i) throws Exception;
+  boolean solve() throws Exception;
+  boolean solve(int i) throws Exception;
   void solution();
 }

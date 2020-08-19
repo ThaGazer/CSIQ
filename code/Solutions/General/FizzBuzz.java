@@ -15,7 +15,7 @@ public class FizzBuzz extends Question {
   public FizzBuzz() {}
 
   @Override
-  public boolean solve(int i) throws Exception {
+  public boolean solve(int i) {
     switch(i) {
       case 0:
         solution();

@@ -21,17 +21,18 @@ public abstract class Question implements Problem {
   }
 
   @Override
-  public void solve() throws Exception {
-    solve(0);
+  public boolean solve() {
+    return solve(0);
   }
 
   @Override
-  public void solve(int i) throws Exception {
+  public boolean solve(int i) {
     if(i == 0) {
       solution();
     } else {
-      throw new Exception();
+      return false;
     }
+    return true;
   }
 
   @Override

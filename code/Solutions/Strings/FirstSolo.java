@@ -20,7 +20,7 @@ public class FirstSolo extends Question {
     this.question = "Find the first non-repeated character in a String";
   }
 
-  public void solve() {
+  public void solution() {
 
   }
 

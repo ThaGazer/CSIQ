@@ -10,15 +10,18 @@ import java.util.Map;
 public class PrefixMapSum extends Question {
 
   @Override
-  public void solve(int i) throws Exception {
+  public boolean solve(int i) {
     switch(i) {
       case 0:
         solution();
+        break;
       case 1:
         solution1();
+        break;
       default:
-        throw new Exception("Unexpected solution");
+        return false;
     }
+    return true;
   }
 
   @Override
@@ -31,7 +34,7 @@ public class PrefixMapSum extends Question {
   }
 
   private void meat(SumMap map) {
-    //TODO build some kind of test
+    //TODO build something to remove repeated code
   }
 
   public static class HashSumMap implements SumMap {
