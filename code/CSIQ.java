@@ -4,20 +4,15 @@
  * Date: 4/26/2019
  */
 
-
 import Solutions.*;
 import Solutions.General.*;
-
 import java.util.*;
 
 /**
  * This is just a place to write varying computer science interview questions
  */
-public class Main {
-
-  private static final String msgEntry = ":>";
+public class CSIQ {
   private static final String msgHelp = "Commands:\n\nhelp\nlist\n[section][problem] ex. a1";
-
   private static final String[][] Questions = {
           {"General",
                   "Find the most frequent int in an array",
@@ -85,50 +80,55 @@ public class Main {
                   "Implement quick sort"}
   };
 
-  public static void main(String[] args) {
-    Main m = new Main();
-    Scanner scn = new Scanner(System.in);
+  private Queue<String> commandQueue;
 
-    do {
-      System.out.print(msgEntry);
-      String line = scn.nextLine();
-
-      try {
-        //TODO return loop continuation /or no need to loop forever?
-        m.handleUserInput(line.split(" "));
-      } catch(Exception e) {
-        System.err.println(e.getMessage());
-        System.exit(1);
-      }
-    } while(true);
+  public CSIQ() {
+    commandQueue = new LinkedList<>();
   }
 
-  private void handleUserInput(String[] commands) throws Exception {
-    switch(commands[0]) {
-      case "list":
-      case "l":
-        listQuestions(commands);
-        break;
-      case "help":
-      case "h":
-        printHelp();
-        break;
-      case "quit":
-      case "q":
-      case "exit":
-        System.exit(0);
-        break;
-      default:
-        handleQuestionSolution(commands);
+  public static void main(String[] args) {
+    CSIQ m = new CSIQ();
+
+    if(args.length < 1) {
+      System.exit(1);
+    } else {
+      m.queueCommands(args);
+    }
+
+    try {
+      m.handleUserInput();
+    } catch(Exception e) {
+      e.printStackTrace();
     }
   }
 
-  private void handleQuestionSolution(String[] command) throws Exception {
+  private void handleUserInput() throws Exception {
+    if(commandQueue.peek() != null) {
+      switch(commandQueue.poll()) {
+        case "list":
+        case "l":
+          listQuestions();
+          break;
+        case "help":
+        case "h":
+          printHelp();
+          break;
+        default:
+          handleQuestionSolution();
+      }
+    }
+  }
+
+  private void queueCommands(String[] args) {
+    commandQueue.addAll(Arrays.asList(args));
+  }
+
+  private void handleQuestionSolution() throws Exception {
     ProblemType pt;
 
-    if(command.length == 2) {
-      pt = Objects.requireNonNull(selectProblem(command[0].charAt(0),
-              Integer.parseInt(command[1])));
+    if(commandQueue.size() == 2) {
+      pt = Objects.requireNonNull(selectProblem(commandQueue.poll().charAt(0),
+              Integer.parseInt(Objects.requireNonNull(commandQueue.poll()))));
 
       System.out.println("Question: " + pt.getDescription() + "\n");
       pt.getFunction().solve();
@@ -149,18 +149,19 @@ public class Main {
     }
   }
 
-  private void listQuestions(String[] command) {
-    switch(command.length) {
+  private void listQuestions() {
+    switch(commandQueue.size()) {
       case 1:
         for(int i = 0; i < Questions.length; i++) {
           printQuestionGroup(i);
         }
         break;
       case 2:
-        printQuestionGroup(command[1].toLowerCase().charAt(0) - 'a');
+        printQuestionGroup(commandQueue.poll().toLowerCase().charAt(0) - 'a');
         break;
       case 3:
-        printQuestion(command[1].toLowerCase().charAt(0) - 'a', Integer.parseInt(command[2]));
+        printQuestion(commandQueue.poll().toLowerCase().charAt(0) - 'a',
+            Integer.parseInt(Objects.requireNonNull(commandQueue.poll())));
         break;
     }
   }
