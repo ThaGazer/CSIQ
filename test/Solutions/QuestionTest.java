@@ -104,21 +104,17 @@ class QuestionTest {
 
     System.out.println("\n[Test]" + quest.getQuestion());
 
-    boolean loop = true;
     int i = 0;
-    while(loop) {
-      long start, stop;
+    long start, stop;
 
-      try {
-        start = System.currentTimeMillis();
-        quest.solve(i);
-        stop = System.currentTimeMillis();
-        times.add("Solution " + i + ": " + (stop - start));
-      } catch(Exception e) {
-        loop = false;
-      }
-      i++;
+    try {
+      start = System.currentTimeMillis();
+      quest.solve(i);
+      stop = System.currentTimeMillis();
+      times.add("Solution " + i + ": " + (stop - start));
+    } catch(Exception e) {
     }
+
     System.out.println(times.toString());
   }
 }

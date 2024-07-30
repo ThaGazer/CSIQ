@@ -35,9 +35,8 @@ public class FizzBuzz extends Question {
     return true;
   }
 
-  @Override
   public void solution() {
-    for(int i = 0; i < 10000; i++) {
+    for(int i = 0; i < 100; i++) {
       System.out.print(i+": ");
 
       if(i % 3 == 0 && i % 5 == 0) {
@@ -89,8 +88,8 @@ public class FizzBuzz extends Question {
   }
 
   private void solution3() {
-    for(int i = 0; i < 10000; i++) {
-
+    for(int i=0;i<100;i++) {
+      System.out.println((i%3<1?"Fizz":"")+(i%5<1?"Buzz":i%3>0?i:""));
     }
   }
 }

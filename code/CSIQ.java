@@ -90,6 +90,8 @@ public class CSIQ {
     CSIQ m = new CSIQ();
 
     if(args.length < 1) {
+      //TODO exception handling would be preferred
+      System.err.println("No command given");
       System.exit(1);
     } else {
       m.queueCommands(args);
@@ -126,7 +128,7 @@ public class CSIQ {
   private void handleQuestionSolution() throws Exception {
     ProblemType pt;
 
-    if(commandQueue.size() == 2) {
+    if(commandQueue.size() >= 2) {
       pt = Objects.requireNonNull(selectProblem(commandQueue.poll().charAt(0),
               Integer.parseInt(Objects.requireNonNull(commandQueue.poll()))));
 
@@ -150,6 +152,7 @@ public class CSIQ {
   }
 
   private void listQuestions() {
+    //TODO fix
     switch(commandQueue.size()) {
       case 1:
         for(int i = 0; i < Questions.length; i++) {
